@@ -1,10 +1,10 @@
-package service;
+package com.maddoxgraham.QuantumQuill.Services;
 
-import exception.UserNotFoundException;
-import model.Book;
+import com.maddoxgraham.QuantumQuill.Exceptions.UserNotFoundException;
+import com.maddoxgraham.QuantumQuill.Models.Book;
+import com.maddoxgraham.QuantumQuill.Repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.BookRepository;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class BookService {
     public Book findBookById(Long idBook){
           // ici comme on retoune un optional dans bookrepository on va devoir lui préciser :
           // retoune un book par son id si tu le trouve sinon retoure l'exception usernotfound
-         return bookRepository.findBookById(idBook).orElseThrow(() -> new UserNotFoundException("User n° " + idBook + " was not found"));
+         return bookRepository.findBookByIdBook(idBook).orElseThrow(() -> new UserNotFoundException("User n° " + idBook + " was not found"));
       }
 
     public void addRating(Long bookId, float ratingValue) {

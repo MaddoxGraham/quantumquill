@@ -1,11 +1,10 @@
-package controller;
+package com.maddoxgraham.QuantumQuill.Controller;
 
-import model.Genre;
+import com.maddoxgraham.QuantumQuill.Models.Genre;
+import com.maddoxgraham.QuantumQuill.Services.GenreService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.GenreService;
-
 
 import java.util.List;
 

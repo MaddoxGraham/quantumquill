@@ -1,10 +1,10 @@
-package controller;
+package com.maddoxgraham.QuantumQuill.Controller;
 
-import model.Book;
+import com.maddoxgraham.QuantumQuill.Models.Book;
+import com.maddoxgraham.QuantumQuill.Services.BookService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.BookService;
 
 import java.util.List;
 

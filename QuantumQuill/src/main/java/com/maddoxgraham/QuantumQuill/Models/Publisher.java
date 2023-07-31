@@ -1,4 +1,4 @@
-package model;
+package com.maddoxgraham.QuantumQuill.Models;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
@@ -19,9 +19,10 @@ public class Publisher implements Serializable {
 
     public Publisher(){};
 
-    public Publisher(Long idPublisher, String name) {
+    public Publisher(Long idPublisher, String name, Set<Book> books) {
         this.idPublisher = idPublisher;
         this.name = name;
+        this.books = books;
     }
 
     public Long getIdPublisher() {
@@ -46,23 +47,5 @@ public class Publisher implements Serializable {
 
     public void setBooks(Set<Book> books) {
         this.books = books;
-    }
-
-    public void addBook(Book book) {
-        books.add(book);
-        book.setPublisher(this);
-    }
-
-    public void removeBook(Book book) {
-        books.remove(book);
-        book.setPublisher(null);
-    }
-
-    @Override
-    public String toString() {
-        return "Publisher{" +
-                "idPublisher=" + idPublisher +
-                ", name='" + name + '\'' +
-                '}';
     }
 }

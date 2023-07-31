@@ -1,11 +1,11 @@
-package service;
+package com.maddoxgraham.QuantumQuill.Services;
 
 
-import exception.UserNotFoundException;
-import model.Artist;
+import com.maddoxgraham.QuantumQuill.Exceptions.UserNotFoundException;
+import com.maddoxgraham.QuantumQuill.Models.Artist;
+import com.maddoxgraham.QuantumQuill.Repository.ArtistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.ArtistRepository;
 
 import java.util.List;
 
@@ -31,9 +31,7 @@ public class ArtistService {
     }
 
     public Artist findArtistById(Long idArtist){
-        // ici comme on retoune un optional dans employeerepository on va devoir lui préciser :
-        // retoune un employé par son id si tu le trouve sinon retoure l'exception usernotfound
-        return artistRepository.findArtistById(idArtist).orElseThrow(() -> new UserNotFoundException("User n° " + idArtist + " was not found"));
+        return artistRepository.findArtistByIdArtist(idArtist).orElseThrow(() -> new UserNotFoundException("User n° " + idArtist + " was not found"));
     }
 
     public void deleteArtist(Long idArtist){

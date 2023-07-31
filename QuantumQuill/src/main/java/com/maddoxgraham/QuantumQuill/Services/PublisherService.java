@@ -1,10 +1,10 @@
-package service;
+package com.maddoxgraham.QuantumQuill.Services;
 
-import exception.UserNotFoundException;
-import model.Publisher;
+import com.maddoxgraham.QuantumQuill.Exceptions.UserNotFoundException;
+import com.maddoxgraham.QuantumQuill.Models.Publisher;
+import com.maddoxgraham.QuantumQuill.Repository.PublisherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.PublisherRepository;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ public class PublisherService {
     }
 
     public Publisher findPublisherById(Long idPublisher){
-        return publisherRepository.findPublisherById(idPublisher).orElseThrow(() -> new UserNotFoundException("User n° " + idPublisher + " was not found"));
+        return publisherRepository.findPublisherByIdPublisher(idPublisher).orElseThrow(() -> new UserNotFoundException("User n° " + idPublisher + " was not found"));
     }
 
     public void deletePublisher(Long idPublisher){

@@ -1,10 +1,10 @@
-package service;
+package com.maddoxgraham.QuantumQuill.Services;
 
-import exception.UserNotFoundException;
-import model.Genre;
+import com.maddoxgraham.QuantumQuill.Exceptions.UserNotFoundException;
+import com.maddoxgraham.QuantumQuill.Models.Genre;
+import com.maddoxgraham.QuantumQuill.Repository.GenreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.GenreRepository;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ public class GenreService {
     }
 
     public Genre findGenreById(Long idGenre){
-        return genreRepository.findGenreById(idGenre).orElseThrow(() -> new UserNotFoundException("User n° " + idGenre + " was not found"));
+        return genreRepository.findGenreByIdGenre(idGenre).orElseThrow(() -> new UserNotFoundException("User n° " + idGenre + " was not found"));
     }
 
     public void deleteGenre(Long idGenre){
