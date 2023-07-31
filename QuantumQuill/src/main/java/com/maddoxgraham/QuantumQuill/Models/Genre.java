@@ -14,25 +14,39 @@ public class Genre implements Serializable {
     private Long idGenre;
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "parent_id")
-    private Genre parentGenre;
-
-    @OneToMany(mappedBy = "parentGenre", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Genre> subGenres = new HashSet<>();
-
-    @OneToMany(mappedBy = "genre", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ManyToMany(mappedBy = "genres")
     private Set<Book> books = new HashSet<>();
 
     public Genre() {
     }
 
-    public Genre(Long idGenre, String name, Genre parentGenre, Set<Genre> subGenres) {
+    public Genre(Long idGenre, String name, Set<Book> books) {
         this.idGenre = idGenre;
         this.name = name;
-        this.parentGenre = parentGenre;
-        this.subGenres = subGenres;
+        this.books = books;
     }
 
+    public Long getIdGenre() {
+        return idGenre;
+    }
 
+    public void setIdGenre(Long idGenre) {
+        this.idGenre = idGenre;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
+    }
 }

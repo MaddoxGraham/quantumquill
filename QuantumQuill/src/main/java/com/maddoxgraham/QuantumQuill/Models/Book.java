@@ -27,9 +27,12 @@ public class Book implements Serializable {
 
     private String imageUrl;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "genre_id")
-    private Genre genre;
+    @ManyToMany
+    @JoinTable(name = "book_genre",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+    private Set<Genre> genres = new HashSet<>();
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "publisher_id")
@@ -44,7 +47,7 @@ public class Book implements Serializable {
     public Book() {
     }
 
-    public Book(Long idBook, String title, Integer totalRatings, float rating, LocalDate publishedDate, String resume, Integer tome, String imageUrl, Genre genre, Publisher publisher, Set<Artist> artists) {
+    public Book(Long idBook, String title, Integer totalRatings, float rating, LocalDate publishedDate, String resume, Integer tome, String imageUrl, Set<Genre> genres, Publisher publisher, Set<Artist> artists) {
         this.idBook = idBook;
         this.title = title;
         this.totalRatings = totalRatings;
@@ -53,7 +56,7 @@ public class Book implements Serializable {
         this.resume = resume;
         this.tome = tome;
         this.imageUrl = imageUrl;
-        this.genre = genre;
+        this.genres = genres;
         this.publisher = publisher;
         this.artists = artists;
     }
@@ -122,12 +125,12 @@ public class Book implements Serializable {
         this.imageUrl = imageUrl;
     }
 
-    public Genre getGenre() {
-        return genre;
+    public Set<Genre> getGenres() {
+        return genres;
     }
 
-    public void setGenre(Genre genre) {
-        this.genre = genre;
+    public void setGenres(Set<Genre> genres) {
+        this.genres = genres;
     }
 
     public Publisher getPublisher() {
