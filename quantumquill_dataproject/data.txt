@@ -1,0 +1,8 @@
+{
+    "title":"Joker",
+    "imageUrl":"https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Joker_graphic_novel_Cover.jpg/220px-Joker_graphic_novel_Cover.jpg",
+    "tome": 0,
+    "publishedDate":17/09/2008,
+    "resume":"Jonny Frost, a low-level thug, is sent to Arkham Asylum to pick up the newly-released Joker. Joker immediately takes a liking to Frost, using him as a chauffeur. Frost drives Joker to the lair of Killer Croc. The three go to a strip bar called the Grin and Bare It. With the help of Harley Quinn, Joker kills one of his former henchmen and claims his intention to make Gotham City his again. Joker robs a bank and coaxes the Penguin to invest the stolen money. Joker embarks on a killing spree, murdering many thugs who stole his money, turf, and bizarre sense of reputation. He is then informed by Penguin that Harvey Dent, his chief rival for control of Gotham, is avoiding him, enraging Joker. Frost is detained by Dent, who warns him that Joker will kill him, but Frost delusionally believes he is an equal partner to Joker. Subsequently, Frost is late to Joker's meeting with the Riddler, a disabled weapons dealer. They exchange a briefcase, and Joker and his crew leave. Once on the road, they are attacked by off-duty cops hired by Dent, and Frost saves Joker's life in the scuffle.",
+    
+}
